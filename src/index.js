@@ -28,15 +28,19 @@ function countdown() {
   const seconds = Math.floor(totalSeconds) % 60;
   
   daysEL.innerHTML = days;
-  hoursEL.innerHTML =  hours;
-  minsEL.innerHTML = minutes;
-  secondsEL.innerHTML = seconds;
+  hoursEL.innerHTML =  formatTime(hours);
+  minsEL.innerHTML = formatTime(minutes);
+  secondsEL.innerHTML = formatTime(seconds);
 
 
-  console.log(days, hours, minutes, seconds);
+  //console.log(days, hours, minutes, seconds);
 
+}
+
+function formatTime(time) {
+  return time < 10 ? (`0${time}`) : time;
 }
 //call function
 countdown()
 
-setInterval(countdown, 1000)
+setInterval(countdown, 1000);
